@@ -27,6 +27,7 @@ export default function createViteConfig() {
       alias: {
         '@components': resolve(commonsPath, 'components'),
         '@constants': resolve(commonsPath, 'constants'),
+        '@contexts': resolve(commonsPath, 'contexts'),
         '@hooks': resolve(commonsPath, 'hooks'),
         '@package': resolve(rootPath, 'package.json'),
         '@types': resolve(commonsPath, 'types'),

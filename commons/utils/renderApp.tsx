@@ -1,3 +1,4 @@
+import { AuthProvider } from '@contexts/AuthContext';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './style.css';
@@ -6,10 +7,14 @@ export default function renderApp(App: React.FC, strict?: boolean) {
   createRoot(document.documentElement).render(
     strict ? (
       <StrictMode>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </StrictMode>
     ) : (
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     )
   );
 }

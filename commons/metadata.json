@@ -1,6 +1,8 @@
 {
   "paths": {
+    "accounts": "accounts/",
     "home": "",
+    "login": "login/",
     "placeren": "placeren/"
   },
   "version": "0.0.0"

@@ -1,0 +1,96 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+  height: 6vh;
+  max-height: 60px;
+  padding: 0.5rem;
+  border-bottom: 0.25rem solid var(--color-theme);
+  background-color: oklch(from var(--color-background) 80% c h / 0.5);
+  >.header-menu {
+    display: contents;
+    >input {
+      display: none;
+      &:checked {
+        ~label::before { content: ''; }
+        ~div { display: flex; }
+      }
+    }
+    >label {
+      all: unset;
+      display: contents;
+      &::before {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      >img {
+        cursor: pointer;
+        border-radius: 50%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        transition: transform 0.2s ease;
+        background-color: #2222;
+        &:hover { transform: scale(1.1); }
+        &:active { transform: scale(0.95); }
+      }
+    }
+    >div {
+      display: none;
+      position: absolute;
+      position-area: bottom;
+      margin: 0.25rem;
+      background-color: var(--color-background);
+      border: 2px solid var(--color-theme);
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px #0003;
+      min-width: 200px;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+      >* {
+        padding: 0.75rem 0.5rem;
+        &:nth-child(n + 2) {
+          border-top: 1px solid var(--color-theme);
+        }
+      }
+    }
+  }
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-theme);
+    letter-spacing: 0.05em;
+  }
+  .info-value {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+  button {
+    all: unset;
+    padding: 0.5rem 1rem;
+    border: 0.125rem solid var(--color-theme);
+    border-radius: 0.5rem;
+    background-color: var(--color-theme);
+    font-weight: bold;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    &:active, &:focus, &:hover {
+      &:not(:disabled) {
+        background-color: oklch(from var(--color-theme) l c h / 0.8);
+      }
+    }
+  }
+}

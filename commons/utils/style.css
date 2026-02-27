@@ -18,6 +18,12 @@
   &.row { flex-direction: row; }
   &.column { flex-direction: column; }
   &.wrap { flex-wrap: wrap; }
+  &.space-between { justify-content: space-between; }
+  &.grow { flex-grow: 1; }
+  &.shrink { flex-shrink: 1; }
+  &.gap-1 { gap: 0.25rem; }
+  &.gap-2 { gap: 0.5rem; }
+  &.gap-3 { gap: 1rem; }
 }
 
 :root {
@@ -29,7 +35,8 @@
   scroll-behavior: smooth;
 
   --color-text: #37392e;
-  --color-background: #dcecec;
+  --color-background: #e4e7eb;
+  --color-theme: #c06666;
 
   color: var(--color-text);
   background-color: var(--color-background);
